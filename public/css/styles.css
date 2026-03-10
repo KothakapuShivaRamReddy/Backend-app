@@ -1,3 +1,6 @@
+*{
+    margin:0;
+}
 .row {
     display: flex;
     /* justify-content: space-around; */
@@ -9,4 +12,24 @@
     border:1px solid gray;
     border-radius: 5px;
     
+}
+.header{
+    display:flex;
+    justify-content: space-between
+    ;
+    background-color: teal;
+    color: white;
+}
+.header li{
+    display:inline-block;
+    font-size:20px;
+    padding:5px
+}
+.header li a{
+    text-decoration: none;
+    color: black;
+}
+.footer{
+    background-color: silver;
+    padding: 5px;
 }
