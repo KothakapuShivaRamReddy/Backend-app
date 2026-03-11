@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Product Edit Form</h2>
-    <form action="/products/<%= product._id %>/save" method="post">
+    <form action="/products/<%= product._id %>/save" method="POST">
         <P><input type="name" name="name" value="<%= product.name %>"></P>
         <P><input type="number" name="price"value="<%= product.price %>"></P>
         <P><input type="name"  name="imageUrl"value="<%= product.imageUrl %>"></P>

@@ -13,6 +13,6 @@ productRouter.get("/:id/delete",deleteproduct)//:id which takes id from the quer
 //edit route for products
 productRouter.get("/:id/edit",editproduct)
 
-productRouter.post("/save",editproductForm)
+productRouter.post("/:id/save",editproductForm)
 
 export default productRouter;

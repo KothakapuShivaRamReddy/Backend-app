@@ -11,11 +11,14 @@
    <diV class="header">
      <h1 >My Store</h1>
      <ul>
-        <li><a href="/">Home</a></li>
-        <li><a href="/">Products</a></li>
-        <li><a href="/">Users</a></li>
-        <li><a href="/">login</a></li>
-        <li><a href="/">Logout</a></li>
+         <li><a href="/">Home</a></li>
+                <% if (user) { %>
+                <li><a href="/products">Products</a></li>
+                <li><a href="/users">Users</a></li>
+                 <li><a href="/auth/logout">Logout</a></li>
+                <% } else { %>
+                <li><a href="/auth/login">Login</a></li>
+                <% } %>
      </ul>
 
    </diV>
