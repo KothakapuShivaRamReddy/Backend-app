@@ -6,7 +6,13 @@ authRouter.get("/login",login)
 authRouter.post("/login",validateUser)
 authRouter.get("/register",register)
 authRouter.post("/register",registerUser)
+
+
+
+
 authRouter.get("/logout",logout)
+
+//this is for the react frontend
 authRouter.post("/signup",signup)
 authRouter.post("/signin",signin)
 

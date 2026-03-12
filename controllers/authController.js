@@ -33,7 +33,7 @@ const registerUser = async (req, res) => {
 const signup = async (req, res) => {
   const { name, email, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
-  password = hashedPassword;
+  // password = hashedPassword;
   const user=await userModel.create({ name, email, password: hashedPassword });
   res.json({ message: "User Created" });
   const response = await userModel.create({
