@@ -34,8 +34,29 @@ const signup = async (req, res) => {
   const { name, email, password } = req.body;
   const hashedPassword = await bcrypt.hash(password, 10);
   password = hashedPassword;
-  await userModel.create({ name, email, password: hashedPassword });
+  const user=await userModel.create({ name, email, password: hashedPassword });
   res.json({ message: "User Created" });
+  const response = await userModel.create({
+    name,
+    email,
+    password: hashedPassword,
+  });
+  res.json(response);
+};
+
+const signin = async (req, res) => {
+  const { email, password } = req.body;
+  const user = await userModel.findOne({ email });
+  if (user) {
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (isMatch) {
+      res.json(user);
+    } else {
+      res.json({ error: "Invalid Password" });
+    }
+  } else {
+    res.json({ error: "Invalid User" });
+  }
 };
 
 const logout = (req, res) => {
@@ -44,4 +65,4 @@ const logout = (req, res) => {
   res.render("auth/login");
 };
 
-export { login, validateUser, register, registerUser, logout };
+export { login, validateUser, register, registerUser, logout, signup,signin };
