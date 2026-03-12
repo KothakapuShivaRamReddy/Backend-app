@@ -10,7 +10,13 @@ import storeRouter  from "./routes/storeRoute.js";
 import homeRouter from "./routes/homeRoute.js";
 import authRouter from "./routes/authRoute.js";
 import userRouter from "./routes/userRoute.js";
+import cors from "cors";//frontend->backend
+
+
+
+
 const app = express();
+app.use(cors());
 app.use(expressLayouts);
 app.set("view engine", "ejs");
 app.set("views", "views");
